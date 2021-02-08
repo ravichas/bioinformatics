@@ -1,6 +1,4 @@
-# bioinformatics
-Bioinformatics related software (R/Python) and files
-
+# Bioinformatics software (R/Python) and data
 
 ## Linux tutorial and NCBI Edirect tutorials
 Click the link, https://github.com/ravichas/bioinformatics/blob/main/NCBI_EDIRECT.ipynb 
