@@ -11,10 +11,10 @@ Here are the steps:
 
  ![Go to binder-examples link](Img/RStudioBinderLaunch1.png)
  
- ![Go to binder-examples link](Img/RStudioBinderLaunch2.PNG)
+ ![Go to binder-examples link](Img/RStudioBinderLaunch2.png)
  
  
- ![Go to binder-examples link](Img/RStudioBinderLaunch3.PNG)
+ ![Go to binder-examples link](Img/RStudioBinderLaunch3.png)
  
- ![Go to binder-examples link](Img/RStudioBinderLaunch4.PNG)
+ ![Go to binder-examples link](Img/RStudioBinderLaunch4.png)
  
