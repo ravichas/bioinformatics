@@ -1,0 +1,472 @@
+---
+title: "R-Introduction using RStudio"
+author: "S. Ravichandran, Ph.D"
+date: "Jan 21, 2020"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### History of R 
+
+* R is a language 
+* No compilation
+* Dynamic programming language
+
+### RStudio basics 
+
+* RStudio is a RGUI
+* R is the main program 
+
+Helpful to start the R session with the following clean-up command. 
+Warning the following command will remove everything in the working environment 
+
+```{r cleanslate}
+rm(list=ls())
+```
+
+Let us treat R as a simple calculator
+
+```{r simpleaddition}
+2 * 3  #[1] 6
+```
+
+Note if R doesnt recognize a code, it displays a + sign and waits for you 
+
+```{r incomplete}
+# Uncomment the following line and run using the green arrow to the right
+# 2 *
+```
+
+```{r error}
+# uncomment the following line and run it
+ # 10 % 5 
+```
+
+### Objects in R
+
+Note that in R everything is treated as an Object. 
+
+Let us start with some basic commands.
+
+```{r assignment}
+# non-standard dont use the assignment operator <- 
+a = 1  
+
+a <- 1
+```
+
+Note that now object a contains number 1. 
+Also note that RStudio environment pane now displays the variable
+
+Let us now talk about what are acceptable and not acceptable variable names. 
+
+<pre> 
+  No      Yes
+  ==      ===
+ 1run     run1 
+  b$       b 
+  mean   ^mean (doable but let us avoid it)
+  !var1    var1
+</pre>
+
+```{r assignment1}
+var1 <- 2 
+var1 <- 100 #overwrite 
+```
+
+```{r morebasiccmds}
+ls() # to see what variables you have so far
+list.files()  # to see the list of files
+
+currdir <- getwd() # to see where you are
+setwd(currdir) # not going anywhere
+getwd()   # check 
+```
+
+### Basic operations in R
+
+Let us do some data analysis with a die? 
+
+```{r die}
+die <- 1:6  # 6 sided die
+
+# let us do some math with die 
+# notice the vector math
+
+die + 2
+
+die/2
+
+die * die
+
+
+# recycling
+
+die + 1:2 
+
+
+# function 
+sum(die)
+
+# Help
+
+# ?sum  # quick way to explore the function arguments
+
+mean(die)
+```
+
+### Constants in R 
+
+```{r constants}
+# stored constants
+pi
+
+# do sume calculations with the constants
+# let us round it 
+
+round(pi, 2)
+
+# let us find the arguments of funtion round
+args(round)
+args(plot)
+
+```
+
+### Drawing samples is an important activity in Statistics
+
+```{r function}
+args(sample)
+
+# sampling function in R
+
+# let us sample a die by rolling 3 times
+
+# uncomment (remove the #) and run the following line 
+# sample(die, size = 7)
+
+# What was the problem? 
+
+# Read the help page or args function on sample 
+# to figure out
+
+#  ?sample
+
+```
+
+```{r roll-a-die}
+p <- c(rep(0.01,5), 0.95)
+p
+sample(x = die, size = 10, replace = TRUE, prob = p)
+
+# no argument name 
+sample(die, 10, replace = TRUE)
+sample(die, 10, TRUE) #  define them explicitely
+sample(x = die, size = 6, replace = TRUE)
+```
+
+```{r Multiple-Rolls}
+# multiple rolls 
+# First roll
+die
+sample(x = die, size = 2, replace = TRUE) # def prob
+# one more roll
+sample(x = die, size = 2, replace = TRUE) # def prob
+```
+
+### Random numbers
+
+Let us see how to generate random numbers. 
+
+```{r uniformrandom}
+unif_rand <- runif(10); unif_rand
+args(round)
+
+#### Note the digits = 0; it is set to zero and optional
+round(unif_rand, digits = 2)
+```
+
+### Functions (like subroutines in Fortran)
+
+Function constructor (like C++) has three parts
+
+ * name 
+ * body (of code)
+ () arguments 
+
+The function structure looks like the following: function() {  ### }
+
+```{r myfunction1}
+dist <- function(a, b) {
+  distsq <- sum( (b - a)^2 )
+  sqrt(distsq)
+}
+
+a <- c(1,2)
+b <- c(3,3)
+
+dist(a,b)
+
+```
+
+We can use RStudio to turn the following line into a function and call it  dist2
+We can create is just using a few click in RStudio.
+
+Let us do the following steps: 
+1) Select 253-254 lines by highlighting 
+2) After selecting the lines, do the following, 
+  Code --> "Extract Function" and give it a name, my_dist
+3) Execute the code 
+4) test it with 
+   a <- c(1,1,2)
+   b <- c(2,2,3)
+   my_dist(a,b)
+
+```{r extract-function}
+    distsq <- sum( (b - a)^2 )
+    sqrt(distsq)
+```
+
+### R-packages
+
+```{r rforest}
+#install.packages("randomForest")
+#library(randomForest)
+# update.packages(c("randomForest","tidyverse"))
+# update R after update.packages 
+```
+
+Let us look at a linear regression example
+
+```{r lr}
+## Annette Dobson (1990) "An Introduction to Generalized Linear Models".
+## Page 9: Plant Weight Data.
+ctl <- c(4.17,5.58,5.18,6.11,4.50,4.61,5.17,4.53,5.33,5.14)
+trt <- c(4.81,4.17,4.41,3.59,5.87,3.83,6.03,4.89,4.32,4.69)
+group <- gl(2, 10, 20, labels = c("Ctl","Trt"))
+weight <- c(ctl, trt)
+lm.D9 <- lm(weight ~ group)
+lm.D90 <- lm(weight ~ group - 1) # omitting intercept
+lm.D9
+plot(group,weight, col = "salmon")
+```
+
+### Export an object
+
+Save an object to a file 
+
+```{r saveobject}
+mtcars
+getwd()
+write.csv(mtcars, file = "mtcars.csv")
+```
+
+### Debugging basics 
+
+Debugging example. Let us define a function called mysum. 
+
+```{r msum}
+mysum <- function(a,b) {
+  sum( (bb - a)^2 )
+}
+
+dist <- function(a, b) {
+  distsq <- mysum(a,b)
+  sqrt(distsq)
+}
+
+# use of RStudio bebug or traceback function
+# dist(a,b)
+```
+
+use of browser function in debug use the 
+control buttons to step through the function 
+
+```{r traceback}
+dist2 <- function(a, b) {
+  browser()
+  distsq <- mysum(a,b)
+  sqrt(distsq)
+}
+
+## Uncomment and run the following two commands to understand
+## how to debug codes
+
+# dist2(a,b)
+# 
+# debug(dist2(a,b))
+```
+
+### Data types
+ * six basic types of atomic vectors:
+ * doubles, integers, characters, logicals, complex, and raw
+ * last two are not very important (see one example below) and we will not discuss further
+
+```{r complex}
+complex(1,2)
+raw(length = 2)
+```
+
+
+Let us explore the data types  with examples
+
+```{r data-types}
+ia <- 1L 
+ia1 <- 1
+class(ia)
+typeof(ia) # internal type or storage mode of any object
+
+class(ia1)
+typeof(ia1)
+
+ra <- runif(10)
+typeof(ra)
+class(ra)
+
+ca <- c("Tom", "cat")
+typeof(ca)
+class(ca)
+```
+
+What is an attribute?
+
+```{r attribute}
+x <- cbind(a = 1:3, pi = pi) # simple matrix with dimnames
+x
+attributes(x)
+
+```
+
+### More on standard R functions
+
+```{r }
+matrix(1:6, 3, 2)
+args(matrix)
+
+# Density function 
+# density function at 5 for a unit normal distribution
+dnorm(1,0,5)
+
+dnorm(2, mean = 2, sd = 3)
+dnorm(0, mean = 0, sd = 1)
+
+pnorm(0, mean = 0, sd = 1)
+
+```
+```{r histogram1}
+# Data from UsingR package
+# to download do the following
+# install.packages("UsingR")
+# data(father.son,package="UsingR")
+
+father.son <- read.csv("https://raw.githubusercontent.com/ravichas/bioinformatics/main/data/father.son_UsingR.csv")
+rn <- rnorm(1000,0,1)
+hist( rn, col = "green" )
+
+x <- father.son$fheight
+mean(x)
+sd(x)
+ hist(x,xlab="Height (in inches)",main="Adult men heights", col = "pink")
+  abline(v = 75, col = "blue",lwd = 2) 
+
+```
+
+```{r basics1}
+# if trees object is a matrix then then 
+# figure from pairs can be imagined to a graphical view of a 
+# matrix
+
+#take advantage of system functions
+pairs(trees, col = "brown")
+```
+
+```{r basics2}
+# let us roll a die and sum up the numbers
+# first time
+results <- sample(x = 1:6, 3) 
+results
+sum(results)
+
+# second time 
+results <- sample(x = 1:6, 3) 
+sum(results)
+
+# We do not want to repeat the same commands all the time
+# let us put them in a function
+
+roll <- function() {
+  die <- 1:6 
+  outcome <- sample(x = die, size = 2, replace = TRUE )
+#  print(outcome)
+  sum(outcome) # returns when you run the function
+}
+
+roll()
+roll()
+
+```
+```{r basics3}
+library(tidyverse)
+manyrolls <- replicate(10000, roll())
+hist(manyrolls, col = "green")
+
+qplot(manyrolls, geom = "histogram")
+
+roll <- function() { 
+   die <- 1:6
+   dice <- sample(die, size = 2, replace = TRUE)
+   sum(dice)
+}
+
+roll1 <- function( s = 2) {
+   die <= 1:6
+   dice <- sample(x = die, size = s, replace = TRUE) # def prob
+  sum(dice)
+}
+```
+
+### How to let RStudio create 
+
+```{r createfunction}
+# Turn the following lines into a function in RStudio
+# call this a function, myroll. Here are the steps:
+#  1) select lines, 450-451 and uncomment them using code --> uncomment Lines
+#  2) use ctrl-Alt-X to create a function (works for windows)
+#  3) give a function name, myroll  
+
+# after step 3, you should see something like the following 
+# 
+ 
+ # myroll <- function(die, s) {
+ #   dice <- sample(x = die, size = s, replace = TRUE) # def prob
+ #   sum(dice)
+ # }
+``` 
+
+```{r more-die-options}
+# dice <- sample(x = die, size = s, replace = TRUE)
+# sum(dice)
+ 
+die <- 1:6
+s <- 3
+# myroll(die, s )
+
+random <- sample(1:52, size = 52)
+random
+
+```
+
+```{r get_symbols}
+get_symbols <- function() {
+  wheel <- c("DD", "7", "BBB", "BB", "B", "C", "0")
+  sample(wheel, size = 3, replace = TRUE,
+         prob = c(0.03, 0.03, 0.06, 0.1, 0.25, 0.01, 0.52))
+}
+get_symbols()
+
+```
