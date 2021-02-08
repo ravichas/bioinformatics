@@ -1,6 +1,11 @@
 # bioinformatics
 Bioinformatics related software (R/Python) and files
 
+
+## Linux tutorial and NCBI Edirect tutorials
+Click the link, https://github.com/ravichas/bioinformatics/blob/main/NCBI_EDIRECT.ipynb 
+and then click on "Open in COLAB" radio button 
+
 ## RStudio (Please use Google Chrome for this exercise)
 Click on the following link, https://github.com/binder-examples/r
 Once you are there, click on the "Launch BINDER" option. A new tab will open, and after the server setup, RStudio session will open on the browser. 
