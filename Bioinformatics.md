@@ -12,7 +12,7 @@ Here are the steps:
  
  Use the following command to get the Rmd file, 
  system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/2-R-Intro.Rmd")
- Please note the other flags (intern and std.err) are optional.
+ Please note the other flags (intern and ignore.stderr) are optional.
  
  ![Go to binder-examples link](Img/RStudioBinderLaunch3.png)
  
