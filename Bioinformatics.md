@@ -18,3 +18,4 @@ Here are the steps:
  
  ![Go to binder-examples link](Img/RStudioBinderLaunch4.png)
  
+ Click on the file "2-R-Intro.Rmd" file to get started.
