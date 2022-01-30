@@ -10,6 +10,9 @@ Here are the steps:
  
  ![Go to binder-examples link](Img/RStudioBinderLaunch2.png)
  
+ Use the following command to get the Rmd file, 
+ system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/2-R-Intro.Rmd")
+ Please note the other flags are optional.
  
  ![Go to binder-examples link](Img/RStudioBinderLaunch3.png)
  
