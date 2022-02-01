@@ -11,6 +11,7 @@
 * R using COLAB (no local installation is needed) 
   * Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/R_tutorial_Bioconductor_Colab.ipynb)
 
+#### R/RStudio installation on your laptop
 * How to install R/RStudio on my Laptop? 
   * Please visit the following [link](https://rstudio-education.github.io/hopr/starting.html#using-r) to learn about installing R/RStudio on your laptop
 
