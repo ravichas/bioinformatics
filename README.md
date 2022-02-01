@@ -5,6 +5,7 @@
 * COLAB tutorial
   * Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/BasicCOLAB_Tutorial.ipynb)  
 * Linux tutorial
+  * Basic Linux: Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/BasicLinux.ipynb)  
   * Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/Linux.ipynb)  
 * NCBI Edirect using COLAB (no local installation required)
   * Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/NCBI_EDIRECT.ipynb)
