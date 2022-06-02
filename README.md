@@ -1,5 +1,7 @@
 # Boinformatics software tutorial for the following topics: 
 
+* Genomic Variation Impact Analysis 
+  * Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/ImpactAnalysis.pdf)
 * R/RStudio tutorial (no local installation required)
   * Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/Bioinformatics.md)
 * COLAB tutorial
