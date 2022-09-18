@@ -13,15 +13,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 system("wget https://zzz.bwh.harvard.edu/plink/dist/plink-1.07-x86_64.zip")
+```
+
+```{r}
 system("unzip plink-1.07-x86_64.zip")
-setwd("plink-1.07-x86_64")
+```
+
+```{r}
 system("ls", intern=TRUE)
 ```
 
 ```{r}
+system("cp plink-1.07-x86_64/* .", intern=TRUE)
+
+
+```{r}
 system("./plink --noweb", intern=TRUE)
 ```
-
 
 ```{r}
 system("./plink --noweb --ped test.ped --map test.map", intern=TRUE)
