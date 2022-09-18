@@ -14,9 +14,8 @@ Here are the steps:
  Use the following command to get the Rmd file, 
 system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/Notebooks/plink.Rmd", intern = TRUE, ignore.stderr = TRUE)
  
- ![Go to binder-examples link](./../Img/RStudioBinderLaunch3.png)
+ ![Go to binder-examples link](./../Img/plink1.png)
  
- ![Go to binder-examples link](./../Img/RStudioBinderLaunch4.png)
- 
- Click on the file "2-R-Intro.Rmd" file to get started.
+ ![Go to binder-examples link](./../Img/plink2.png)
+ Please note that after you ran the above command, plink.Rmd, file was downloaded and appear on the RHS bottom window of the RStudio panel. Click on the file "plink.Rmd" file to get started.
 
