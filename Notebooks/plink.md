@@ -15,6 +15,7 @@ Here are the steps:
 ``` 
 system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/Notebooks/plink.Rmd", intern = TRUE, ignore.stderr = TRUE)
 ```
+And paste the command in the terminal window (look at the following figure)
  
  ![Go to binder-examples link](./../Img/plink1.png)
  
