@@ -1,0 +1,28 @@
+---
+title: "PLINK"
+author: "S. Ravichandran"
+date: '2022-09-18'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## PLINK tutorial
+
+```{r}
+system("wget https://zzz.bwh.harvard.edu/plink/dist/plink-1.07-x86_64.zip")
+system("unzip plink-1.07-x86_64.zip")
+setwd("plink-1.07-x86_64")
+system("ls", intern=TRUE)
+```
+
+```{r}
+system("./plink --noweb", intern=TRUE)
+```
+
+
+```{r}
+system("./plink --noweb --ped test.ped --map test.map", intern=TRUE)
+```
