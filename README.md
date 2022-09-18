@@ -10,7 +10,7 @@
   * Basic Linux: Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/BasicLinux.ipynb)  
   * Advanced Linux: Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/Linux.ipynb)  
 * NCBI Edirect using COLAB (no local installation required)
-  * Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/NCBI_EDIRECT.ipynb)
+  * Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/Notebooks/NCBI_EDIRECT.ipynb)
 * R using COLAB (no local installation is needed) 
   * Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/R_tutorial_Bioconductor_Colab.ipynb)
 
