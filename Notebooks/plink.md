@@ -12,7 +12,9 @@ Here are the steps:
  ![Go to binder-examples link](./../Img/RStudioBinderLaunch2.png)
  
  Use the following command to get the Rmd file, 
+``` 
 system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/Notebooks/plink.Rmd", intern = TRUE, ignore.stderr = TRUE)
+```
  
  ![Go to binder-examples link](./../Img/plink1.png)
  
