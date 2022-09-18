@@ -20,5 +20,7 @@ And paste the command in the console window (look at the following figure)
  ![Go to binder-examples link](./../Img/plink1.png)
  
  ![Go to binder-examples link](./../Img/plink2.png)
- Please note that after you ran the above command, plink.Rmd, file was downloaded and appear on the RHS bottom window of the RStudio panel. Click on the file "plink.Rmd" file to get started.
+ Please note that after you ran the above command, the R-Markdown-file called, plink.Rmd, file will be downloaded and appear on the RHS bottom window of the RStudio panel. Click on the newly downloaded file, "plink.Rmd", file to get started.
+ 
+ You can "Run All" to run all the cells or you can "knit" to get a HTML file output
 
