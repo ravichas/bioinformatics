@@ -7,6 +7,7 @@ library(devtools)
 library(rafalib)
 BiocManager::install("Biobase")
 BiocManager::install("geneplotter")
+BiocManager::install("genefilter")
 library(geneplotter)
 library(Biobase)
 
