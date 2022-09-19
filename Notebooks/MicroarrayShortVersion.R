@@ -6,6 +6,7 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 library(devtools)
 library(rafalib)
 library(geneplotter)
+library(Biobase)
 
 # Example1: Let us explore a sample Expression Set data
 
