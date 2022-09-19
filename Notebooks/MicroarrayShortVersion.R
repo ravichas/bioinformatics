@@ -3,17 +3,25 @@
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 
+# When you start RStudio will warn that there is no devtools or rafalib
+# Click yes to install them and any dependencies
 library(devtools)
 library(rafalib)
+library(dplyr)
+#*************Takes time. Run one line at a time*********#
 BiocManager::install("Biobase")
 BiocManager::install("geneplotter")
+# Takes time
 BiocManager::install("genefilter")
+BiocManager::install("GEOquery")
+
+#*****************
 library(geneplotter)
 library(Biobase)
+library(GEOquery)
 
 # Example1: Let us explore a sample Expression Set data
 
-library(Biobase)
 # class??
 class(4)
 class(pi); pi
@@ -45,11 +53,9 @@ head(exprs(sample.ExpressionSet))
 #         : Samples are also called Experimental units 
 #         : Samples could be from diff. parts of a tumor
 
-
-library(devtools)
+# devtools
 install_github("genomicsclass/GSE5859Subset")
 library(GSE5859Subset)
-library(Biobase)
 mypar(1,1)
 
 .oldls = ls()
@@ -108,7 +114,7 @@ class(pData(es1))
 boxplot(es1$date ~ es1$ethnicity, xlab = "Ethnicity", ylab="chip date")
 
 # How many samples were created on 2005-10-28?
-library(dplyr)
+## library(dplyr)
 filter(sampleInfo, date == "2005-10-28")
 
 # How many genes are part of CHR 2 ?
@@ -252,8 +258,8 @@ for (i in 1:nrow(geneExpression)) {
 
 # let us compute p-values, adj. pvalues, FDR 
 
-library(genefilter)
-library(GSE5859Subset)
+# library(genefilter)
+# library(GSE5859Subset)
 data(GSE5859Subset)
 g <- factor(sampleInfo$group)
 tt_results <- rowttests(geneExpression,g)
@@ -267,9 +273,9 @@ sum(tt_results$p.value < k)
 
 
 
-library(genefilter)
-library(GSE5859Subset)
-data(GSE5859Subset)
+#library(genefilter)
+#library(GSE5859Subset)
+# data(GSE5859Subset)
 g <- factor(sampleInfo$group)
 tt_results <- rowttests(geneExpression,g)
 hist(tt_results$p.value)
