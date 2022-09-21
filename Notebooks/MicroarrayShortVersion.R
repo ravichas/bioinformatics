@@ -5,15 +5,22 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 
 # When you start RStudio will warn that there is no devtools or rafalib
 # Click yes to install them and any dependencies
+spackages <- c("devtools", "rafalib", "dplyr") 
+if (any(installed_packages == FALSE)) {  install.packages(spackages[!installed_packages]) }
+
 library(devtools)
 library(rafalib)
 library(dplyr)
+
+bpackages <- c("Biobase", "geneplotter", "genefilter", "GEOquery")
+installed_packages <- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {  BiocManager::install(bpackages[!installed_packages]) }
 #*************Takes time. Run one line at a time*********#
-BiocManager::install("Biobase")
-BiocManager::install("geneplotter")
+# BiocManager::install("Biobase")
+# BiocManager::install("geneplotter")
 # Takes time
-BiocManager::install("genefilter")
-BiocManager::install("GEOquery")
+# BiocManager::install("genefilter")
+# BiocManager::install("GEOquery")
 
 #*****************
 library(geneplotter)
