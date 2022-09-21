@@ -269,7 +269,7 @@ for (i in 1:nrow(geneExpression)) {
 # library(GSE5859Subset)
 data(GSE5859Subset)
 g <- factor(sampleInfo$group)
-tt_results <- rowttests(geneExpression,g)
+tt_results <- genefilter::rowttests(geneExpression,g)
 p_values <- tt_results$p.value < 0.05
 num_p_values <- length(p_values) 
 num_p_values # 1383 genes 
@@ -284,7 +284,7 @@ sum(tt_results$p.value < k)
 #library(GSE5859Subset)
 # data(GSE5859Subset)
 g <- factor(sampleInfo$group)
-tt_results <- rowttests(geneExpression,g)
+tt_results <- genefilter::rowttests(geneExpression,g)
 hist(tt_results$p.value)
 
 # let us set up a null
@@ -292,7 +292,7 @@ hist(tt_results$p.value)
 NR <- nrow(geneExpression)
 NC <- ncol(geneExpression)
 rData <- matrix(rnorm(NR*NC),NR,NC)
-ntt_results <- rowttests(rData,g)
+ntt_results <- genefilter::rowttests(rData,g)
 hist(ntt_results$p.value)
 
 # Reporting only P-values is wrong
