@@ -117,9 +117,9 @@ suppressPackageStartupMessages({
 
 getwd()
 
-# setwd("~/Downloads")
+setwd("~/Downloads")
 # 
-# getwd()
+getwd()
 
 
 # STOP
