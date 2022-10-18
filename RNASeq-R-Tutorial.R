@@ -74,7 +74,7 @@ if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 
 BiocManager::install("RNAseq123", ask=FALSE)
-BiocManager::install("Glimma", ask = FALSE")
+BiocManager::install("Glimma", ask = FALSE)
 
 
 url <- "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE63310&format=file"  
