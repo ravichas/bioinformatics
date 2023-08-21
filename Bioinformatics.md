@@ -8,14 +8,15 @@ Here are the steps:
  
  ![Go to binder-examples link](Img/RStudioBinderLaunch2.png)
  
- Use the following command to get the Rmd file, 
- 
- system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/2-R-Intro.Rmd") 
- 
- or
- 
- system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/2-R-Intro.Rmd", intern = TRUE, ignore.stderr = TRUE)
+ Use the either one of the following commands to get the Rmd file, 
 
+<p>
+ system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/2-R-Intro.Rmd") 
+</p>
+ or
+ <p>
+ system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/2-R-Intro.Rmd", intern = TRUE, ignore.stderr = TRUE)
+</p>
 Please note the other flags (intern and ignore.stderr) are optional.
  
  ![Go to binder-examples link](Img/RStudioBinderLaunch3.png)
