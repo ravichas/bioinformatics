@@ -8,16 +8,19 @@ Here are the steps:
  
  ![Go to binder-examples link](Img/RStudioBinderLaunch2.png)
  
- Use the either one of the following commands to get the Rmd file, 
+ Use either one of the following commands to get the Rmd (R hands-on tutorial) file, 
 
 <p>
  system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/2-R-Intro.Rmd") 
 </p>
+ 
  or
+ 
  <p>
  system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/2-R-Intro.Rmd", intern = TRUE, ignore.stderr = TRUE)
 </p>
-Please note the other flags (intern and ignore.stderr) are optional.
+
+Please note the flags, **intern and ignore.stderr**, are optional.
  
  ![Go to binder-examples link](Img/RStudioBinderLaunch3.png)
  
