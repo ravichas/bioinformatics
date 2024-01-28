@@ -1,7 +1,10 @@
 # Boinformatics software tutorial for the following topics: 
 
-* R/RStudio tutorial (no local installation required; 01/22/2024: Binder doesnt work)
-  * Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/Bioinformatics.md)
+* R/RStudio tutorial (no local installation required)
+  * Go to https://posit.cloud/ and create or login using Google account (example)
+       * Choose "New Project" --> "New RStudio Project". When the RStudio session opens, type the following command
+          system("wget https://raw.githubusercontent.com/ravichas/bioinformatics/main/2-R-Intro.Rmd")
+  * Binder (as of Jan 2024; Doesnt work): Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/Bioinformatics.md)
 * COLAB tutorial
   * Click the following [link](https://github.com/ravichas/bioinformatics/blob/main/BasicCOLAB_Tutorial.ipynb)  
 * Linux tutorial
